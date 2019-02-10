@@ -5,7 +5,15 @@ defmodule AbslogWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", AbslogWeb do
+  scope "/api" do
     pipe_through :api
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: AbslogWeb.Schema
+
+    forward "/", Absinthe.Plug,
+      schema: AbslogWeb.Schema
+
   end
+
 end
