@@ -1,0 +1,8 @@
+
+Set up a schema
+
+Set up types
+
+    :post
+
+Add lib/_web/schema dir

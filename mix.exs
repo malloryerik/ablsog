@@ -17,10 +17,11 @@ defmodule Abslog.MixProject do
   # Configuration for the OTP application.
   #
   # Type `mix help compile.app` for more information.
+  # Check `extra_applications`
   def application do
     [
       mod: {Abslog.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :absinthe_plug]
     ]
   end
 
@@ -29,7 +30,6 @@ defmodule Abslog.MixProject do
   defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
-  #
   # Type `mix help deps` for examples and options.
   defp deps do
     [
